@@ -1,0 +1,62 @@
+html,
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    width: 300px;
+    height: 200px;
+    /* background: #000; */
+    background: rgb(255, 255, 255);
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.card h2 {
+    z-index: 1;
+    font-size: 2em;
+    background: linear-gradient(to right, #424679, #b321de, #4296d6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    background-image: linear-gradient(280deg, #e55d87, #5fc3e4);
+    height: 200%;
+    animation: border 3s linear infinite;
+    transition: all 0.2s linear;
+}
+
+@keyframes border {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    /* background: #07182E; */
+    background: rgb(255, 255, 000);
+    inset: 5px;
+    border-radius: 15px;
+}
